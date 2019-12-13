@@ -30,7 +30,7 @@ public class UserController {
     public void insert(@RequestParam("username")String username,
                       @RequestParam("password")String password){
         User user = new User();
-        user.setId(snowFlake.createId());
+        user.setId(snowFlake.nextId());
         user.setUsername(username);
         user.setPassword(password);
         user.setCreateTime(new Date().toString());
